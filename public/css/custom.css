@@ -1,0 +1,635 @@
+/* CSS Custom Properties for FreshBite Brand Colors */
+:root {
+    --primary-color: #009f6b;
+    --primary-dark: #008a5c;
+    --primary-light: #00b377;
+    --primary-lighter: #e6f7f0;
+    
+    /* Supporting colors */
+    --accent-color: #f59e0b;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --info-color: #3b82f6;
+    
+    /* Neutral colors */
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --text-muted: #9ca3af;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f9fafb;
+    --bg-tertiary: #f3f4f6;
+    --border-color: #e5e7eb;
+}
+
+/* Utility classes using CSS variables */
+.main-bg {
+    background-color: var(--primary-color);
+}
+
+.main-color {
+    color: var(--primary-color);
+}
+
+.main-border {
+    border-color: var(--primary-color);
+}
+
+.main-hover:hover {
+    background-color: var(--primary-dark);
+}
+
+.main-hover-text:hover {
+    color: var(--primary-color);
+}
+
+/* Button styles */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-outline-primary {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Text colors */
+.text-primary {
+    color: var(--primary-color);
+}
+
+.text-secondary {
+    color: var(--text-secondary);
+}
+
+/* Background colors */
+.bg-primary-light {
+    background-color: var(--primary-lighter);
+}
+
+.bg-secondary {
+    background-color: var(--bg-secondary);
+}
+
+/* Border colors */
+.border-primary {
+    border-color: var(--primary-color);
+}
+
+/* Animation classes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0px); 
+    }
+    50% { 
+        transform: translateY(-20px); 
+    }
+}
+
+@keyframes gentleFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes rotate {
+    from { 
+        transform: rotate(0deg); 
+    }
+    to { 
+        transform: rotate(360deg); 
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { 
+        transform: scale(1); 
+        opacity: 0.1; 
+    }
+    50% { 
+        transform: scale(1.1); 
+        opacity: 0.2; 
+    }
+}
+
+@keyframes shimmer {
+    0% { 
+        transform: translateX(-100%); 
+    }
+    100% { 
+        transform: translateX(100%); 
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 53%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40%, 43% {
+        transform: translateY(-30px);
+    }
+    70% {
+        transform: translateY(-15px);
+    }
+    90% {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes celebrate-bounce {
+    0% {
+        transform: translateY(-100px) scale(0.3);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(20px) scale(1.1);
+        opacity: 1;
+    }
+    70% {
+        transform: translateY(-10px) scale(0.9);
+    }
+    85% {
+        transform: translateY(5px) scale(1.05);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes party-sparkle {
+    0%, 100% {
+        transform: scale(0) rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1) rotate(180deg);
+        opacity: 1;
+    }
+}
+
+@keyframes celebration-float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-15px) rotate(5deg);
+    }
+    50% {
+        transform: translateY(-25px) rotate(0deg);
+    }
+    75% {
+        transform: translateY(-15px) rotate(-5deg);
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    75% {
+        transform: rotate(-5deg);
+    }
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animation utility classes */
+.animate-fadeInUp {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-slideLeft {
+    animation: slideLeft 0.8s ease-out;
+}
+
+.animate-slideRight {
+    animation: slideRight 0.8s ease-out;
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 1s ease-out;
+}
+
+.animate-fade-in-right {
+    animation: fadeInRight 1s ease-out;
+}
+
+.animate-gentle-float {
+    animation: gentleFloat 3s ease-in-out infinite;
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-rotate-slow {
+    animation: rotate 20s linear infinite;
+}
+
+.animate-pulse-slow {
+    animation: pulse 4s ease-in-out infinite;
+}
+
+.animate-shimmer {
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+.animate-bounce {
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.animate-slide-in-left {
+    animation: slideInFromLeft 1s ease-out;
+}
+
+.animate-slide-in-right {
+    animation: slideInFromRight 1s ease-out;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.8s ease-out;
+}
+
+.animate-wave {
+    animation: wave 3s ease-in-out infinite;
+}
+
+.animate-sparkle {
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+.animate-celebrate-bounce {
+    animation: celebrate-bounce 1.2s ease-out forwards;
+}
+
+.animate-party-sparkle {
+    animation: party-sparkle 1.5s ease-in-out infinite;
+}
+
+.animate-celebration-float {
+    animation: celebration-float 3s ease-in-out infinite;
+}
+
+/* Card hover effects */
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation scroll effect */
+.nav-scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Product card specific styles */
+.product-card {
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(23, 84, 132, 0.15);
+}
+
+/* Quick action buttons */
+.quick-action-btn {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+}
+
+.quick-action-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+/* =============================================== */
+/* HERO SECTION STYLES */
+/* =============================================== */
+
+/* Hero Section Background */
+.hero-bg {
+    background: linear-gradient(135deg, #1a1a2e 0%, var(--primary-color) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative floating circles */
+.decorative-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    animation: float 6s ease-in-out infinite;
+}
+
+.decorative-circle:nth-child(1) {
+    width: 120px;
+    height: 120px;
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.decorative-circle:nth-child(2) {
+    width: 80px;
+    height: 80px;
+    top: 70%;
+    right: 10%;
+    animation-delay: 2s;
+}
+
+.decorative-circle:nth-child(3) {
+    width: 60px;
+    height: 60px;
+    top: 30%;
+    right: 20%;
+    animation-delay: 4s;
+}
+
+/* Hero Button Styles */
+.hero-btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.hero-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 159, 107, 0.4);
+}
+
+.hero-btn-secondary {
+    background: transparent;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.hero-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Hero specific animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Primary color utility for hero */
+.bg-primary {
+    background-color: var(--primary-color);
+}
+
+/* Drop shadow utilities */
+.drop-shadow-lg {
+    filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+}
+
+.drop-shadow-sm {
+    filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+}
+
+/* =============================================== */
+/* NAVIGATION BAR STYLES */
+/* =============================================== */
+
+/* Navigation bar base styles */
+#main-navbar {
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+/* Transparent navigation (initial state) */
+#main-navbar.navbar-transparent {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+#main-navbar.navbar-transparent .nav-link,
+#main-navbar.navbar-transparent a:not(.main-color),
+#main-navbar.navbar-transparent i,
+#main-navbar.navbar-transparent span {
+    color: white !important;
+}
+
+#main-navbar.navbar-transparent .main-color {
+    color: white !important;
+}
+
+/* Solid navigation (after scroll) */
+#main-navbar.navbar-solid {
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+#main-navbar.navbar-solid .nav-link,
+#main-navbar.navbar-solid a:not(.main-color) {
+    color: var(--text-primary) !important;
+}
+
+#main-navbar.navbar-solid .main-color {
+    color: var(--primary-color) !important;
+}
+
+/* Smooth transitions for text color */
+#main-navbar.navbar-transparent *,
+#main-navbar.navbar-solid * {
+    transition: color 0.3s ease;
+}
+
+/* Navigation link hover effects */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Mobile menu styles */
+.mobile-menu {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* =============================================== */
+/* RESPONSIVE ADJUSTMENTS */
+/* =============================================== */
+
+/* =============================================== */
+/* CATEGORY CIRCLE ANIMATIONS */
+/* =============================================== */
+
+.category-circle {
+    animation: scaleIn 0.6s ease-out forwards;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.category-circle:nth-child(1) { animation-delay: 0s; }
+.category-circle:nth-child(2) { animation-delay: 0.1s; }
+.category-circle:nth-child(3) { animation-delay: 0.2s; }
+.category-circle:nth-child(4) { animation-delay: 0.3s; }
+.category-circle:nth-child(5) { animation-delay: 0.4s; }
+.category-circle:nth-child(6) { animation-delay: 0.5s; }
+
+.category-circle:hover {
+    transform: translateY(-5px);
+}
+
+.category-circle:hover .rounded-full {
+    box-shadow: 0 15px 35px rgba(0, 159, 107, 0.3);
+}
+
+@media (max-width: 768px) {
+    .animate-fadeInUp,
+    .animate-slideLeft,
+    .animate-slideRight {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+    
+    /* Mobile navigation adjustments */
+    #main-navbar.navbar-solid {
+        background: rgba(255, 255, 255, 0.98) !important;
+    }
+    
+    .nav-link::after {
+        display: none;
+    }
+    
+    /* Mobile category circles */
+    .category-circle {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+} 
