@@ -1,5 +1,5 @@
 <!-- Navigation -->
-<nav id="main-navbar" class="navbar-transparent shadow-sm fixed w-full z-50">
+<nav id="main-navbar" class="{{ request()->is('shop') ? 'main-bg navbar-solid shadow' : 'navbar-transparent shadow-sm' }} fixed w-full z-50 transition-colors duration-300">
     <div class="max-w-6xl mx-auto px-4">
         <div class="flex justify-between items-center h-16">
             <div class="flex items-center">
@@ -25,9 +25,9 @@
                     <i class="fas fa-shopping-cart text-lg"></i>
                     <span class="absolute -top-2 -right-2 main-bg text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
                 </a>
-                <a href="#" class="text-gray-600 hover:main-color transition duration-300 p-2">
+                <button id="openAuthModal" class="text-gray-600 hover:main-color transition duration-300 p-2">
                     <i class="fas fa-user text-lg"></i>
-                </a>
+                </button>
             </div>
             
             <div class="md:hidden flex items-center">
@@ -56,18 +56,20 @@
     const solidClass = 'navbar-solid';
     const transparentClass = 'navbar-transparent';
     
-    function handleNavbarScroll() {
-        if (window.scrollY > 40) {
-            navbar.classList.add(solidClass);
-            navbar.classList.remove(transparentClass);
-        } else {
-            navbar.classList.add(transparentClass);
-            navbar.classList.remove(solidClass);
+    // Only apply scroll effect if not on /shop
+    if (!window.location.pathname.startsWith('/shop')) {
+        function handleNavbarScroll() {
+            if (window.scrollY > 40) {
+                navbar.classList.add(solidClass);
+                navbar.classList.remove(transparentClass);
+            } else {
+                navbar.classList.add(transparentClass);
+                navbar.classList.remove(solidClass);
+            }
         }
+        window.addEventListener('scroll', handleNavbarScroll);
+        window.addEventListener('load', handleNavbarScroll);
     }
-    
-    window.addEventListener('scroll', handleNavbarScroll);
-    window.addEventListener('load', handleNavbarScroll);
     
     // Mobile menu toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
