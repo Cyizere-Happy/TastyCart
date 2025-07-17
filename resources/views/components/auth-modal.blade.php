@@ -22,9 +22,11 @@
                 <!-- Login Form -->
                 <form id="loginForm" class="space-y-2 px-1">
                     <div>
-                        <label for="loginEmail" class="block text-xs font-medium text-gray-700 mb-1">Email Address</label>
-                        <input type="email" id="loginEmail" name="email" required 
-                               class="w-full px-3 py-1.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#009f6b] focus:border-transparent text-sm">
+                        <label for="loginIdentifier" class="block text-xs font-medium text-gray-700 mb-1">Email or Phone Number</label>
+                        <input type="text" id="loginIdentifier" name="identifier" required 
+                               class="w-full px-3 py-1.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#009f6b] focus:border-transparent text-sm"
+                               inputmode="email" autocomplete="username">
+                        <p class="text-[10px] text-gray-400 mt-1">You can use your email or mobile number.</p>
                     </div>
                     
                     <div>
@@ -55,9 +57,11 @@
                     </div>
                     
                     <div>
-                        <label for="registerEmail" class="block text-xs font-medium text-gray-700 mb-1">Email Address</label>
-                        <input type="email" id="registerEmail" name="email" required 
-                               class="w-full px-3 py-1.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#009f6b] focus:border-transparent text-sm">
+                        <label for="registerIdentifier" class="block text-xs font-medium text-gray-700 mb-1">Email or Phone Number</label>
+                        <input type="text" id="registerIdentifier" name="identifier" required 
+                               class="w-full px-3 py-1.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#009f6b] focus:border-transparent text-sm"
+                               inputmode="email" autocomplete="username">
+                        <p class="text-[10px] text-gray-400 mt-1">You can use your email or mobile number.</p>
                     </div>
                     
                     <div>
