@@ -1,5 +1,5 @@
 <!-- Navigation -->
-<nav id="main-navbar" class="{{ request()->is('shop') ? 'main-bg navbar-solid shadow' : 'navbar-transparent shadow-sm' }} fixed w-full z-50 transition-colors duration-300">
+<nav id="main-navbar" class="navbar-transparent shadow-sm fixed w-full z-50 transition-colors duration-300">
     <div class="max-w-6xl mx-auto px-4">
         <div class="flex justify-between items-center h-16">
             <div class="flex items-center">
@@ -10,22 +10,18 @@
             </div>
             
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#" class="nav-link text-gray-700 hover:main-color transition duration-300 font-medium">Home</a>
-                <a href="#" class="nav-link text-gray-700 hover:main-color transition duration-300 font-medium">Shop</a>
-                <a href="#" class="nav-link text-gray-700 hover:main-color transition duration-300 font-medium">Categories</a>
-                <a href="#" class="nav-link text-gray-700 hover:main-color transition duration-300 font-medium">About</a>
-                <a href="#" class="nav-link text-gray-700 hover:main-color transition duration-300 font-medium">Contact</a>
+                <a href="/" class="nav-link font-medium transition duration-300 {{ request()->is('/') ? 'main-color font-bold' : 'text-gray-700 hover:main-color' }}">Home</a>
+                <a href="/shop" class="nav-link font-medium transition duration-300 {{ request()->is('shop') ? 'main-color font-bold' : 'text-gray-700 hover:main-color' }}">Shop</a>
+                <a href="/brand-story" class="nav-link font-medium transition duration-300 {{ request()->is('brand-story') ? 'main-color font-bold' : 'text-gray-700 hover:main-color' }}">Brand Story</a>
+                <a href="/help" class="nav-link font-medium transition duration-300 {{ request()->is('help') ? 'main-color font-bold' : 'text-gray-700 hover:main-color' }}">Help</a>
             </div>
             
-            <div class="flex items-center space-x-6">
-                <a href="#" class="text-gray-600 hover:main-color transition duration-300 p-2">
-                    <i class="fas fa-search text-lg"></i>
-                </a>
-                <a href="#" class="text-gray-600 hover:main-color transition duration-300 relative p-2">
+            <div class="flex items-center space-x-2 sm:space-x-3 md:space-x-6">
+                <a href="/cart" class="text-gray-600 hover:main-color transition duration-300 relative p-1 sm:p-2">
                     <i class="fas fa-shopping-cart text-lg"></i>
                     <span class="absolute -top-2 -right-2 main-bg text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
                 </a>
-                <button id="openAuthModal" class="text-gray-600 hover:main-color transition duration-300 p-2">
+                <button id="openAuthModal" class="text-gray-600 hover:main-color transition duration-300 p-1 sm:p-2">
                     <i class="fas fa-user text-lg"></i>
                 </button>
             </div>
@@ -41,11 +37,10 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu md:hidden bg-white absolute top-16 left-0 w-full shadow-lg z-40 hidden">
         <div class="px-4 py-4 space-y-2">
-            <a href="#" class="block px-3 py-2 text-gray-700 hover:main-color rounded transition duration-300">Home</a>
-            <a href="#" class="block px-3 py-2 text-gray-700 hover:main-color rounded transition duration-300">Shop</a>
-            <a href="#" class="block px-3 py-2 text-gray-700 hover:main-color rounded transition duration-300">Categories</a>
-            <a href="#" class="block px-3 py-2 text-gray-700 hover:main-color rounded transition duration-300">About</a>
-            <a href="#" class="block px-3 py-2 text-gray-700 hover:main-color rounded transition duration-300">Contact</a>
+            <a href="/" class="block px-3 py-2 rounded transition duration-300 {{ request()->is('/') ? 'main-color font-bold' : 'text-gray-700 hover:main-color' }}">Home</a>
+            <a href="/shop" class="block px-3 py-2 rounded transition duration-300 {{ request()->is('shop') ? 'main-color font-bold' : 'text-gray-700 hover:main-color' }}">Shop</a>
+            <a href="/brand-story" class="block px-3 py-2 rounded transition duration-300 {{ request()->is('brand-story') ? 'main-color font-bold' : 'text-gray-700 hover:main-color' }}">Brand Story</a>
+            <a href="/help" class="block px-3 py-2 rounded transition duration-300 {{ request()->is('help') ? 'main-color font-bold' : 'text-gray-700 hover:main-color' }}">Help</a>
         </div>
     </div>
 </nav>
@@ -55,21 +50,17 @@
     const navbar = document.getElementById('main-navbar');
     const solidClass = 'navbar-solid';
     const transparentClass = 'navbar-transparent';
-    
-    // Only apply scroll effect if not on /shop
-    if (!window.location.pathname.startsWith('/shop')) {
-        function handleNavbarScroll() {
-            if (window.scrollY > 40) {
-                navbar.classList.add(solidClass);
-                navbar.classList.remove(transparentClass);
-            } else {
-                navbar.classList.add(transparentClass);
-                navbar.classList.remove(solidClass);
-            }
+    function handleNavbarScroll() {
+        if (window.scrollY > 40) {
+            navbar.classList.add(solidClass);
+            navbar.classList.remove(transparentClass);
+        } else {
+            navbar.classList.add(transparentClass);
+            navbar.classList.remove(solidClass);
         }
-        window.addEventListener('scroll', handleNavbarScroll);
-        window.addEventListener('load', handleNavbarScroll);
     }
+    window.addEventListener('scroll', handleNavbarScroll);
+    window.addEventListener('load', handleNavbarScroll);
     
     // Mobile menu toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
